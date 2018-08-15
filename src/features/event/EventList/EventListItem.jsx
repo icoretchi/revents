@@ -11,7 +11,7 @@ import {
 
 class EventListItem extends Component {
   render() {
-    const { event } = this.props;
+    const { event, onEventOpen, deleteEvent } = this.props;
     return (
       <div>
         <Segment.Group>
@@ -52,6 +52,14 @@ class EventListItem extends Component {
           <Segment clearing>
             <span>{event.description}</span>
             <Button
+              onClick={deleteEvent(event.id)}
+              as="a"
+              color="red"
+              floated="right"
+              content="Delete"
+            />
+            <Button
+              onClick={onEventOpen(event)}
               as="a"
               color="teal"
               floated="right"
