@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import EventListAttendee from './EventListAttendee';
 
 import {
@@ -11,7 +12,7 @@ import {
 
 class EventListItem extends Component {
   render() {
-    const { event, onEventOpen, deleteEvent } = this.props;
+    const { event, deleteEvent } = this.props;
     return (
       <div>
         <Segment.Group>
@@ -59,8 +60,8 @@ class EventListItem extends Component {
               content="Delete"
             />
             <Button
-              onClick={onEventOpen(event)}
-              as="a"
+              as={Link}
+              to={`/events/${event.id}`}
               color="teal"
               floated="right"
               content="View"

@@ -27,6 +27,7 @@ class App extends Component {
               <Container className="main">
                 <Switch>
                   <Route
+                    exact
                     path="/events"
                     component={EventDashboard}
                   />
@@ -34,6 +35,7 @@ class App extends Component {
                     path="/events/:id"
                     component={EventDetailedPage}
                   />
+                  <Route path="/manage/:id" component={EventForm} />
                   <Route
                     path="/people"
                     component={PeopleDashboard}
