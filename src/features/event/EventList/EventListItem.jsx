@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import format from 'date-fns/format';
 import EventListAttendee from './EventListAttendee';
 
 import {
@@ -35,8 +36,10 @@ class EventListItem extends Component {
           </Segment>
           <Segment>
             <span>
-              <Icon name="clock" /> {event.date} |
-              <Icon name="marker" /> {event.venue}
+              <Icon name="clock" />
+              {format(event.date, 'dddd Do MMMM')} at{' '}
+              {format(event.date, 'HH:mm')} |<Icon name="marker" />
+              {event.venue}
             </span>
           </Segment>
           <Segment secondary>
